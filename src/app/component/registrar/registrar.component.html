@@ -1,0 +1,65 @@
+<body>
+    <br><br><br><br><br><br><br>
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+          <div class="col-md-7"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <img src="https://www.comfenalcovalle.com.co/wp-content/uploads/2018/05/Logo-comfenalco-valle.png" width="500">
+          </div>
+          <div class="col-md-5">
+            <div class="card text-white bg-success" style="max-width: 200rem;">
+                <div class="card-body">
+                  <h2 class="card-title">Registrarse</h2>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Datos de ingreso:</label>
+                    <input [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="usuarios.email">
+                    <input [(ngModel)]="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" [(ngModel)]="usuarios.password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Datos basicos:</label>
+                    <div class="form-group" >
+                      <select class="custom-select" [(ngModel)]="usuarios.idTipoDoc">
+                        <option selected="">Tipo de documento</option>
+                        <option value="1">Cedula</option>
+                        <option value="1">DNI</option>
+                        <option value="1">Pasaporte</option>
+                      </select>
+                    </div>
+                    <input type="text" class="form-control" id="numeroDocumento" placeholder="numeroDocumento" [(ngModel)]="usuarios.numeroDocumento">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" [(ngModel)]="usuarios.nombre">
+                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" [(ngModel)]="usuarios.apellido">
+                    <input type="date" class="form-control" id="fechaNacimiento" placeholder="Fecha de nacimiento" [(ngModel)]="usuarios.fechaNacimiento">
+                    <div class="form-group">
+                      <select class="custom-select" [(ngModel)]="usuarios.idGnr">
+                        <option selected="">Genero</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <select class="custom-select" [(ngModel)]="usuarios.idPais">
+                        <option selected="">Pais</option>
+                        <option value="1">Colombia</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <select class="custom-select" [(ngModel)]="usuarios.idCiudad">
+                        <option selected="">Ciudad</option>
+                        <option value="1">Cali</option>
+                        <option value="2">Bogota</option>
+                        <option value="3">Medellin</option>
+                      </select>
+                    </div>
+                    <input type="text" class="form-control" id="idTipoUsr" placeholder="idTipoUsr" [(ngModel)]="usuarios.idTipoUsr">
+                  </div>
+                  <button (click)="registrar()" type="button" class="btn btn-primary mb-3">Registrarse</button>
+                  <button [routerLink]="['/ingresar']" routerLinkActive="router-link-active"  type="button" class="btn btn-warning mb-3">Cancelar</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
