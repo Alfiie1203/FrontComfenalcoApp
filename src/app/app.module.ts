@@ -20,6 +20,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { ProgramasComponent } from './component/programas/programas.component';
 import { ContactoComponent } from './component/contacto/contacto.component';
 import { VerAplicacionesComponent } from './component/ver-aplicaciones/ver-aplicaciones.component';
+import { RevisionDocumentosComponent } from './component/revision-documentos/revision-documentos.component';
+import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciudades.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { VerAplicacionesComponent } from './component/ver-aplicaciones/ver-aplic
     NavbarComponent,
     ProgramasComponent,
     ContactoComponent,
-    VerAplicacionesComponent
+    VerAplicacionesComponent,
+    RevisionDocumentosComponent,
+    ListarCiudadesComponent
   ],
   imports: [
     BrowserModule,
