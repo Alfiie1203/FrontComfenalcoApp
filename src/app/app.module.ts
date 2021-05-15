@@ -22,6 +22,7 @@ import { ContactoComponent } from './component/contacto/contacto.component';
 import { VerAplicacionesComponent } from './component/ver-aplicaciones/ver-aplicaciones.component';
 import { RevisionDocumentosComponent } from './component/revision-documentos/revision-documentos.component';
 import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciudades.component';
+import { FormularioAplicacionComponent } from './component/formulario-aplicacion/formulario-aplicacion.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciud
     ContactoComponent,
     VerAplicacionesComponent,
     RevisionDocumentosComponent,
-    ListarCiudadesComponent
+    ListarCiudadesComponent,
+    FormularioAplicacionComponent
   ],
   imports: [
     BrowserModule,
