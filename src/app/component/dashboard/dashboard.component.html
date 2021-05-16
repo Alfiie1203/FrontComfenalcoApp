@@ -1,71 +1,226 @@
-<app-navbar></app-navbar>
+<body>
+  <input type="checkbox" id="sidebar-toggle">
+  <div class="sidebar">
+    <div class="sidebar-header mt-4 ">
+      <h3 class="brand">
+        <span class="ti ti-unlink ml-2"></span>
+        <span class="ml-2 mr-4">Comfenalco-App</span>
+      </h3>
+      <label for="sidebar-toggle" class="ti ti-menu-alt"></label>
+    </div>
 
-<div class="jumbotron">
-  <h1>Todas las aplicaiones:</h1>
-  <hr class="my-4">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Programa:</th>
-        <th scope="col">Usuario:</th>
-        <th scope="col">Fecha:</th>
-        <th scope="col">Estado:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Vivienda nueva</th>
-        <td>Luis Alfredo Rangel</td>
-        <td>25/04/2021</td>
-        <td>Pendiente</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">Construccion en sitio propio</th>
-        <td>Juan Pablo Caro</td>
-        <td>25/04/2021</td>
-        <td>Aprobado</td>
-      </tr>
-      <tr class="table-danger">
-        <th scope="row">Vivienda nueva</th>
-        <td>Maria Jose Serrano</td>
-        <td>25/04/2021</td>
-        <td>Rechazado</td>
-      </tr>
-      <tr class="table-warning">
-        <th scope="row">Vivienda nueva</th>
-        <td>Alejandra Mazuera</td>
-        <td>25/04/2021</td>
-        <td>En proceso</td>
-      </tr>
-    </tbody>
-</table> <br>
-<div>
-  <ul class="pagination pagination-lg">
-    <li class="page-item disabled">
-      <a class="page-link" href="#">&laquo;</a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">3</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">4</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">5</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">&raquo;</a>
-    </li>
-  </ul>
-</div>
-</div>
+    <div class="sidebar-menu mt-5">
+      <ul>
+        <li>
+          <a href="" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
+            <span class="ti ti-home"></span>
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="ti ti-face-smile"></span>
+            <span>Usuarios</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="ti ti-briefcase"></span>
+            <span>Formularios</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="ti ti-close"></span>
+            <span>Salir</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span></span>
+            <span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <header>
+      <div class="search-wrapper">
+        <span class="ti ti-search">
+          <input type="Busqueda" placeholder="Busqueda">
+        </span>
+      </div>
+
+      <div class="social-icons">
+        <span class="ti ti-bell"></span>
+        <span class="ti ti-comment"></span>
+        <div ></div>
+      </div>
+    </header>
+
+    <main>
+
+      <h2 class="dash-title ">General</h2>
+
+      <div class="dash-cards ">
+
+          <div class="card-single pendientes">
+            <div class="card-body">
+                <span class="ti ti-briefcase mr-2"></span>
+                <div>
+                  <h5>Solicitudes Pendientes</h5>
+                  <h4>3</h4>
+                </div>
+              </div>
+              <div class="card-footer pendientes">
+                <a href="" class="ml-3">Mostrar Todo</a>
+              </div>
+            </div>
+
+            <div class="card-single aprobado">
+              <div class="card-body">
+                  <span class="ti ti-briefcase mr-2"></span>
+                  <div>
+                    <h5>Solicitudes Aprobadas</h5>
+                    <h4>3</h4>
+                  </div>
+                </div>
+                <div class="card-footer aprobado">
+                  <a href="" class="ml-3">Mostrar Todo</a>
+                </div>
+              </div>
+
+              <div class="card-single rechazadas">
+                <div class="card-body">
+                    <span class="ti ti-briefcase mr-2"></span>
+                    <div>
+                      <h5>Solicitudes Rechazadas</h5>
+                      <h4>3</h4>
+                    </div>
+                  </div>
+                  <div class="card-footer rechazadas">
+                    <a href="" class="ml-3">Mostrar Todo</a>
+                  </div>
+                </div>
+
+                <div class="card-single enProceso">
+                  <div class="card-body">
+                      <span class="ti ti-briefcase mr-2"></span>
+                      <div>
+                        <h5>Solicitudes en Proceso</h5>
+                        <h4>3</h4>
+                      </div>
+                    </div>
+                    <div class="card-footer enProceso">
+                      <a href="" class="ml-3">Mostrar Todo</a>
+                    </div>
+                  </div>
+          </div>
+
+          <div class="card border-secondary listaCard ml-4" >
+            <div class="card-header">
+              <h1 class="m-2">Lista de Solicitudes</h1>
+            </div>
+            <div class="card-body">
+              <table style="overflow: auto display: inline-block" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Programa:</th>
+                    <th scope="col">Usuario:</th>
+                    <th scope="col">Fecha:</th>
+                    <th scope="col">Estado:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Luis Alfredo Rangel</td>
+                    <td>25/04/2021</td>
+                    <td>Pendiente</td>
+                  </tr>
+                  <tr class="table-success">
+                    <th scope="row">Construccion en sitio propio</th>
+                    <td>Juan Pablo Caro</td>
+                    <td>25/04/2021</td>
+                    <td>Aprobado</td>
+                  </tr>
+                  <tr class="table-danger">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Maria Jose Serrano</td>
+                    <td>25/04/2021</td>
+                    <td>Rechazado</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Vivienda nueva</th>
+                    <td>Alejandra Mazuera</td>
+                    <td>25/04/2021</td>
+                    <td>En proceso</td>
+                  </tr>
+                </tbody>
+            </table>
+
+            </div>
+          </div>
 
 
-<app-listar-ciudades></app-listar-ciudades>
+    </main>
+  </div>
 
+</body>
