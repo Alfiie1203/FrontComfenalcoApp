@@ -7,6 +7,7 @@ import { IngresarComponent } from './component/ingresar/ingresar.component';
 import { RegistrarComponent } from './component/registrar/registrar.component';
 import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/header/header.component';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -48,6 +49,7 @@ import { FormularioAplicacionComponent } from './component/formulario-aplicacion
     AngularFireModule.initializeApp(environment.firebases),
     AngularFireAuthModule,
     FormsModule,
+    AngularFireStorageModule,
     HttpClientModule,
 
   ],

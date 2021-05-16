@@ -54,7 +54,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usuarios= new Usuarios("","","","","","","","","","","");
+    this.usuarios= new Usuarios("","","","","","","","","","","","");
   }
 
 }

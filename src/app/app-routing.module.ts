@@ -12,6 +12,7 @@ import { ContactoComponent } from './component/contacto/contacto.component';
 import { VerAplicacionesComponent } from './component/ver-aplicaciones/ver-aplicaciones.component';
 import { RevisionDocumentosComponent } from './component/revision-documentos/revision-documentos.component';
 import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciudades.component';
+import { FormularioAplicacionComponent } from './component/formulario-aplicacion/formulario-aplicacion.component';
 
 const redirectUnauthorizedToLogin=()=>redirectUnauthorizedTo(['/ingresar']);
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'ver-aplicaciones',component:RevisionDocumentosComponent},
 
   {path:'listarCiudades', component:ListarCiudadesComponent},
+  {path:'formularioAplicacion', component:FormularioAplicacionComponent},
 
 
   {path:'ingresar',component:IngresarComponent},

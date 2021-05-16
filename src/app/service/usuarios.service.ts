@@ -17,4 +17,8 @@ export class UsuariosService {
     return this.http.post(this.url+'UserRegistration',usuarios);
   }
 
+  public findAllByEmail(email:string):Observable<any>{
+    return this.http.get(this.url+'getAllDataUserByCorreo?correo='+email);
+  }
+
 }
