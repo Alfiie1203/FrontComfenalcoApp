@@ -1,18 +1,18 @@
 <body>
+  <input type="checkbox" id="sidebar-toggle">
   <div class="sidebar">
-    <div class="sibedar-header">
+    <div class="sidebar-header mt-4 ">
       <h3 class="brand">
-        <span class="ti ti-unlink"></span>
-        <span class="pr-4">Comfenalco-App</span>
-        <span class="ti ti-menu-alt"></span>
+        <span class="ti ti-unlink ml-2"></span>
+        <span class="ml-2 mr-4">Comfenalco-App</span>
       </h3>
-
+      <label for="sidebar-toggle" class="ti ti-menu-alt"></label>
     </div>
 
-    <div class="sidebar-menu">
+    <div class="sidebar-menu mt-5">
       <ul>
         <li>
-          <a href="">
+          <a href="" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
             <span class="ti ti-home"></span>
             <span>Inicio</span>
           </a>

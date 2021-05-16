@@ -19,6 +19,10 @@ th, td {
   color: var(--color-dark);
 }
 
+#sidebar-toggle{
+  display: none;
+}
+
 .sidebar {
     height: 100%;
     width: 290px;
@@ -28,7 +32,8 @@ th, td {
     z-index: 100;
     background: #027581;
     color: #fff;
-    padding: 1rem;
+    overflow-y: auto;
+    transition: width 500ms;
 }
 
 .sidebar-header{
@@ -37,7 +42,6 @@ th, td {
     align-items: center;
     height: 60px;
     padding: 0rem 1rem;
-
 }
 
 .sidebar-menu{
@@ -51,21 +55,44 @@ th, td {
 
 .sidebar a {
     color: var(--main-color);
-    font-size: .9rem;
+    font-size: 1.2rem;
 }
 
-.sidebar a span:first-child {
-    padding-right: .5rem;
-    font-size: 1.2rem;
+.sidebar a span:last-child {
+  padding-left: .6rem;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+  width: 60px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar li span:last-child{
+  display: none;
+}
+
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header,
+#sidebar-toggle:checked ~ .sidebar li{
+  display: flex;
+  justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+  left: -220px;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+  left: 60px;
+  width: 100%;
 }
 
 .main-content{
     position: relative;
     margin-left: -120px;
     margin-bottom: 1rem;
-    height: calc(100% - 60px);
-    width: 1650px;
-
+    width: 2000px;
+    transition: margin-left 500ms;
 }
 
 header {
@@ -81,6 +108,7 @@ header {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
+    transition: left 500ms;
 }
 
 .search-wrapper{
@@ -118,7 +146,7 @@ header {
 }
 
 main {
-    margin-top: 20px;
+    margin-top: 60px;
     background: #f1f5f9;
     min-height: 90vh;
     padding: 4rem;
