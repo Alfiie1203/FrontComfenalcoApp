@@ -21,4 +21,18 @@ export class UsuariosService {
     return this.http.get(this.url+'getAllDataUserByCorreo?correo='+email);
   }
 
+  public listarGenero():Observable<any>{
+    return this.http.get(this.url+'getGeneros');
+  }
+
+  public listarPaises():Observable<any>{
+    return this.http.get(this.url+'getPaises');
+  }
+
+  public listarCiudades():Observable<any>{
+    return this.http.get(this.url+'getCiudades');
+  }
+
+
+
 }

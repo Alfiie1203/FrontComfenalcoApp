@@ -8,7 +8,10 @@ import { RegistrarComponent } from './component/registrar/registrar.component';
 import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/header/header.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
+import pdfFonts from "pdfmake/build/vfs_fonts"; // fonts provided for pdfmake
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+// Set the fonts to use
+PdfMakeWrapper.setFonts(pdfFonts);
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
