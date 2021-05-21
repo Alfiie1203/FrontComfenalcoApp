@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  apiUrl: 'https://comfenalcosubsidios.seedcharlie.co/',
   firebases:{
     apiKey: "AIzaSyDxyGzZEMe7TURs675TkDcZ5cMHOa5Su7A",
     authDomain: "comfenalco-app-bb31a.firebaseapp.com",
