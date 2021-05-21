@@ -8,7 +8,7 @@ export class Users {
         public fechaNacimiento:string,
         public idGnr:string,
         public numeroDocumento:string,
-        public email:string,
+        public eMail:string,
         public idCiudad:string,
         public idPais:string,
         public idTipoDoc:string,

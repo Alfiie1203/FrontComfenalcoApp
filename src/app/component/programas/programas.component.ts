@@ -1,9 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { Aplicacion } from 'src/app/domain/aplicacion';
+import { Users } from 'src/app/domain/users';
 import { Usuarios } from 'src/app/domain/usuarios';
 import { ProgramasService } from 'src/app/service/programas.service';
 import { UsuariosService } from 'src/app/service/usuarios.service';
@@ -18,6 +19,7 @@ export class ProgramasComponent implements OnInit {
   public email:string;
   public aplicacion: Aplicacion;
   public usuarios: Usuarios;
+  public users: Users;
   
   uploadPercent: Observable<number>;
   urlImage: Observable<string>;
@@ -26,11 +28,13 @@ export class ProgramasComponent implements OnInit {
   constructor(private storage: AngularFireStorage,
               private aplicacionService: ProgramasService,
               private usuariosService: UsuariosService,
+              public router:Router,
               public activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.aplicacion=new Aplicacion ("","","","");
     this.usuarios= new Usuarios("","","","","","","","","","","","");
+    this.datosUsers();
     
   }
 
@@ -60,7 +64,16 @@ export class ProgramasComponent implements OnInit {
       
     });
 
-    
+
+  }
+
+  public datosUsers():void{
+    this.usuariosService.findAllByEmail(localStorage.getItem("email")).subscribe(data=>{
+      this.users=data;
+    },error=>{
+      console.error(error);
+      
+    });
 
   }
 
@@ -70,7 +83,6 @@ export class ProgramasComponent implements OnInit {
     this.aplicacion.fechaFinalizacion = "2021-06-04";
     this.aplicacion.formulario = this.inputFormulario.nativeElement.value;
 
-    console.log(this.usuarios);
 
     Swal.fire({
       title: '¿Esta seguro que quiere aplicar?',
@@ -82,7 +94,7 @@ export class ProgramasComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         this.aplicacionService.aplicar(this.aplicacion).subscribe(ok=>{
-          //this.router.navigate(['/ciudades/list']);
+          this.router.navigate(['/home']);
         },err=>{
           Swal.fire({
             icon: 'error',
@@ -94,6 +106,7 @@ export class ProgramasComponent implements OnInit {
         Swal.fire('Cambios no guardados', '', 'info')
       }
     })
+    
 
 
     

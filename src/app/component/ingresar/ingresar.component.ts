@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subsidio } from 'src/app/domain/subsidio';
 import { Users } from 'src/app/domain/users';
 import { Usuarios } from 'src/app/domain/usuarios';
 import { AuthComfenancoService } from 'src/app/service/auth-comfenanco.service';
@@ -13,6 +14,7 @@ import Swal from 'sweetalert2'
 })
 export class IngresarComponent implements OnInit {
   public usuarios:Users;
+  public subsidio:Subsidio;
   public email:string;
   public password:string;
   public msg:string="";
@@ -35,6 +37,8 @@ export class IngresarComponent implements OnInit {
       })
     });
   }
+
+
 
   public findTipoByEmail():void{
     this.usuariosService.findAllByEmail(this.email).subscribe(data =>{

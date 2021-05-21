@@ -21,6 +21,10 @@ export class UsuariosService {
     return this.http.get(this.url+'getAllDataUserByCorreo?correo='+email);
   }
 
+  public validarSubsidio(email:string):Observable<any>{
+    return this.http.get(this.url+'getUserSubsidios?correo='+email);
+  }
+
   public listarGenero():Observable<any>{
     return this.http.get(this.url+'getGeneros');
   }

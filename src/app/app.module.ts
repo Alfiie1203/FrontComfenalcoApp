@@ -27,6 +27,7 @@ import { VerAplicacionesComponent } from './component/ver-aplicaciones/ver-aplic
 import { RevisionDocumentosComponent } from './component/revision-documentos/revision-documentos.component';
 import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciudades.component';
 import { FormularioAplicacionComponent } from './component/formulario-aplicacion/formulario-aplicacion.component';
+import { SeguimientoComponent } from './component/seguimiento/seguimiento.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FormularioAplicacionComponent } from './component/formulario-aplicacion
     VerAplicacionesComponent,
     RevisionDocumentosComponent,
     ListarCiudadesComponent,
-    FormularioAplicacionComponent
+    FormularioAplicacionComponent,
+    SeguimientoComponent
   ],
   imports: [
     BrowserModule,
