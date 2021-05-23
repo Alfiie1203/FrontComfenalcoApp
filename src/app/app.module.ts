@@ -24,6 +24,7 @@ import { RevisionDocumentosComponent } from './component/revision-documentos/rev
 import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciudades.component';
 import { FormularioAplicacionComponent } from './component/formulario-aplicacion/formulario-aplicacion.component';
 import { ModificarFormComponent } from './component/modificar-form/modificar-form.component';
+import { ConsultarSolicitudComponent } from './component/consultar-solicitud/consultar-solicitud.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ModificarFormComponent } from './component/modificar-form/modificar-for
     RevisionDocumentosComponent,
     ListarCiudadesComponent,
     FormularioAplicacionComponent,
-    ModificarFormComponent
+    ModificarFormComponent,
+    ConsultarSolicitudComponent
   ],
   imports: [
     BrowserModule,

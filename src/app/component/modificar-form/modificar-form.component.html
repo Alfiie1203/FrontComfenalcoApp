@@ -18,15 +18,9 @@
           </a>
         </li>
         <li>
-          <a href="">
-            <span class="ti ti-face-smile"></span>
-            <span>Consultar Solicitud</span>
-          </a>
-        </li>
-        <li>
-          <a href="" [routerLink]="['/dashboard/Modificar']" routerLinkActive="router-link-active">
+          <a href="" [routerLink]="['/dashboard/ConsultarSolicitud']" routerLinkActive="router-link-active">
             <span class="ti ti-briefcase"></span>
-            <span >Modificar Solicitud</span>
+            <span>Consultar Solicitud</span>
           </a>
         </li>
         <li>
@@ -46,20 +40,6 @@
   </div>
 
   <div class="main-content">
-
-    <header>
-      <div class="search-wrapper">
-        <span class="ti ti-search">
-          <input type="Busqueda" placeholder="Busqueda">
-        </span>
-      </div>
-
-      <div class="social-icons">
-        <span class="ti ti-bell"></span>
-        <span class="ti ti-comment"></span>
-        <div ></div>
-      </div>
-    </header>
 
     <main>
       <form #solicitudForm = "ngForm">
@@ -90,7 +70,7 @@
             </div>
           </div>
           <button type="submit" class="btn btn-primary btnAceptar">Submit</button>
-          <button type="submit" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="btn  btnAceptar">Cancelar</button>
+          <button [routerLink]="['/dashboard']" routerLinkActive="router-link-active" type="submit"class="btn">Cancelar</button>
         </fieldset>
       </form>
 

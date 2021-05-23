@@ -13,6 +13,12 @@
     box-sizing: border-box;
 }
 
+th, td {
+  padding: 15px;
+  text-align: left;
+  color: var(--color-dark);
+}
+
 #sidebar-toggle{
   display: none;
 }
@@ -89,36 +95,85 @@
     transition: margin-left 500ms;
 }
 
+// header {
+//     position: fixed;
+//     left: 290px;
+//     top: 0;
+//     z-index: 100;
+//     width: calc(100% - 290px);
+//     background: #fff;
+//     height: 60px;
+//     padding: 0rem 1rem;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     border-bottom: 1px solid #ccc;
+//     transition: left 500ms;
+// }
+
+.social-icons{
+  display: flex;
+  align-items: center;
+}
+
+.social-icons span,
+.social-icons div{
+  margin-left: 0.8rem;
+  font-size: 1.2rem;
+
+}
+
+.social-icons div{
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/assets/images/walter.jpg);
+  border-radius: 50%;
+}
+
 main {
     margin-top: 60px;
     background: #f1f5f9;
     min-height: 90vh;
     padding: 4rem;
+    width: 100%;
 }
 
-.card-header{
-  margin-bottom: 15px;
+.dash-title{
+  color: #1D2231;
+  margin-bottom: 1rem;
 }
 
-.pText{
-  margin-left: 450px;
-  margin-bottom: 45px;
+
+.pendientes{
+    background: #fff;
 }
 
-.cardContainer{
-  width: 1000px;
-  height: 1000px;
-  left: 90px;
+.aprobado{
+  background: lightgreen;
 }
 
-.form-group{
-  margin-bottom: 15px;
+.rechazadas{
+  background: lightpink;
+}
+
+.enProceso{
+  background: palegoldenrod;
+}
+
+.postulado{
+  background: lightskyblue;
+}
+
+.table-hover {
+  width: 1200px;
+  margin-bottom: 40px;
 }
 
 .btn{
-  width: 100px;
   height: 50px;
-  margin-top: 45px;
-  margin-left: 45px;
-  margin-right: 70px;
+  width: 80px;
+  margin-top: 15px;
+  margin-right: 40px;
 }

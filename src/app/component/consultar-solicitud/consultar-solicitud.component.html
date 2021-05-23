@@ -1,0 +1,63 @@
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+      <div class="sidebar-header mt-4 ">
+        <h3 class="brand">
+          <span class="ti ti-unlink ml-2"></span>
+          <span class="ml-2 mr-4">Comfenalco-App</span>
+        </h3>
+        <label for="sidebar-toggle" class="ti ti-menu-alt"></label>
+      </div>
+  
+      <div class="sidebar-menu mt-5">
+        <ul>
+          <li>
+            <a href="" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
+              <span class="ti ti-home"></span>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="" [routerLink]="['/dashboard/ConsultarSolicitud']" routerLinkActive="router-link-active">
+              <span class="ti ti-briefcase"></span>
+              <span>Consultar Solicitud</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="ti ti-close"></span>
+              <span>Salir</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span></span>
+              <span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="main-content">
+  
+      <main>
+        <form #solicitudForm = "ngForm">
+            <fieldset>
+              <legend class="mb-4">Busqueda de solicitud</legend>
+              <div class="form-group row ">
+                <label for="idSolicitud" class="col-sm-2 col-form-label ">Id Solicitud</label>
+                <div class="col-sm-3 ">
+                  <input #idSolicitud type="text" class="form-control-plaintext" name="idSolicitud" id="idSolicitud" placeholder="Ingrese el Id de la solicitud que desea">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btnAceptar">Submit</button>
+              <button type="submit" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="btn  btnAceptar">Cancelar</button>
+            </fieldset>
+        </form>
+      </main>
+    </div>
+  
+  </body> 
+  
+  
