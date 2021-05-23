@@ -23,6 +23,7 @@ import { VerAplicacionesComponent } from './component/ver-aplicaciones/ver-aplic
 import { RevisionDocumentosComponent } from './component/revision-documentos/revision-documentos.component';
 import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciudades.component';
 import { FormularioAplicacionComponent } from './component/formulario-aplicacion/formulario-aplicacion.component';
+import { ModificarFormComponent } from './component/modificar-form/modificar-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormularioAplicacionComponent } from './component/formulario-aplicacion
     VerAplicacionesComponent,
     RevisionDocumentosComponent,
     ListarCiudadesComponent,
-    FormularioAplicacionComponent
+    FormularioAplicacionComponent,
+    ModificarFormComponent
   ],
   imports: [
     BrowserModule,

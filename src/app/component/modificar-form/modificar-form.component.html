@@ -1,0 +1,100 @@
+<body>
+  <input type="checkbox" id="sidebar-toggle">
+  <div class="sidebar">
+    <div class="sidebar-header mt-4 ">
+      <h3 class="brand">
+        <span class="ti ti-unlink ml-2"></span>
+        <span class="ml-2 mr-4">Comfenalco-App</span>
+      </h3>
+      <label for="sidebar-toggle" class="ti ti-menu-alt"></label>
+    </div>
+
+    <div class="sidebar-menu mt-5">
+      <ul>
+        <li>
+          <a href="" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
+            <span class="ti ti-home"></span>
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="ti ti-face-smile"></span>
+            <span>Consultar Solicitud</span>
+          </a>
+        </li>
+        <li>
+          <a href="" [routerLink]="['/dashboard/Modificar']" routerLinkActive="router-link-active">
+            <span class="ti ti-briefcase"></span>
+            <span >Modificar Solicitud</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="ti ti-close"></span>
+            <span>Salir</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span></span>
+            <span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <header>
+      <div class="search-wrapper">
+        <span class="ti ti-search">
+          <input type="Busqueda" placeholder="Busqueda">
+        </span>
+      </div>
+
+      <div class="social-icons">
+        <span class="ti ti-bell"></span>
+        <span class="ti ti-comment"></span>
+        <div ></div>
+      </div>
+    </header>
+
+    <main>
+      <form #solicitudForm = "ngForm">
+        <fieldset>
+          <legend class="mb-4">Formulario de modificacion de  solicitud</legend>
+          <div class="form-group row ">
+            <label for="programa" class="col-sm-2 col-form-label ">Programa</label>
+            <div class="col-sm-3 ">
+              <input [(ngModel)]="solicitud.idPrograma" #programa type="text" class="form-control-plaintext" name="programa" id="programa" placeholder="Ingrese el programa">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="usuario" class="col-sm-2 col-form-label">Usuario</label>
+            <div class="col-sm-3">
+              <input [(ngModel)]="solicitud.idUsuario" type="text" class="form-control-plaintext" name="usuario" id="usuario" placeholder="Ingrese el nombre de usuario">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="fecha" class="col-sm-2 col-form-label">Fecha</label>
+            <div class="col-sm-3">
+              <input [(ngModel)]="solicitud.fechaCreacion" type="date" class="form-control-plaintext" name="fecha" id="fecha" id="staticDate">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+            <div class="col-sm-3">
+              <input [(ngModel)]="solicitud.idEstado" type="text" class="form-control-plaintext" name="estado" id="estado" placeholder="Ingrese el estado">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btnAceptar">Submit</button>
+          <button type="submit" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="btn  btnAceptar">Cancelar</button>
+        </fieldset>
+      </form>
+
+    </main>
+  </div>
+
+</body>

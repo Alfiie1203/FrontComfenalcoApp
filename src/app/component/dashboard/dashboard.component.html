@@ -20,13 +20,13 @@
         <li>
           <a href="">
             <span class="ti ti-face-smile"></span>
-            <span>Usuarios</span>
+            <span>Consultar Solicitud</span>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="" [routerLink]="['/dashboard/Modificar']" routerLinkActive="router-link-active">
             <span class="ti ti-briefcase"></span>
-            <span>Formularios</span>
+            <span >Modificar Solicitud</span>
           </a>
         </li>
         <li>
@@ -47,20 +47,6 @@
 
   <div class="main-content">
 
-    <header>
-      <div class="search-wrapper">
-        <span class="ti ti-search">
-          <input type="Busqueda" placeholder="Busqueda">
-        </span>
-      </div>
-
-      <div class="social-icons">
-        <span class="ti ti-bell"></span>
-        <span class="ti ti-comment"></span>
-        <div ></div>
-      </div>
-    </header>
-
     <main>
 
       <h2 class="dash-title ">General</h2>
@@ -71,8 +57,8 @@
             <div class="card-body">
                 <span class="ti ti-briefcase mr-2"></span>
                 <div>
-                  <h5>Solicitudes Pendientes</h5>
-                  <h4>3</h4>
+                  <h5>Solicitudes Por Verificar</h5>
+                  <h4>{{estadoPrograma.porVerificar}}</h4>
                 </div>
               </div>
               <div class="card-footer pendientes">
@@ -84,8 +70,8 @@
               <div class="card-body">
                   <span class="ti ti-briefcase mr-2"></span>
                   <div>
-                    <h5>Solicitudes Aprobadas</h5>
-                    <h4>3</h4>
+                    <h5>Solicitudes Calificadas</h5>
+                    <h4>{{estadoPrograma.calificado}}</h4>
                   </div>
                 </div>
                 <div class="card-footer aprobado">
@@ -97,8 +83,8 @@
                 <div class="card-body">
                     <span class="ti ti-briefcase mr-2"></span>
                     <div>
-                      <h5>Solicitudes Rechazadas</h5>
-                      <h4>3</h4>
+                      <h5>Solicitudes Canceladas</h5>
+                      <h4>{{estadoPrograma.cancelado}}</h4>
                     </div>
                   </div>
                   <div class="card-footer rechazadas">
@@ -110,14 +96,27 @@
                   <div class="card-body">
                       <span class="ti ti-briefcase mr-2"></span>
                       <div>
-                        <h5>Solicitudes en Proceso</h5>
-                        <h4>3</h4>
+                        <h5>Solicitudes Asignadas</h5>
+                        <h4>{{estadoPrograma.asignado}}</h4>
                       </div>
                     </div>
                     <div class="card-footer enProceso">
                       <a href="" class="ml-3">Mostrar Todo</a>
                     </div>
                   </div>
+
+                  <div class="card-single postulado">
+                    <div class="card-body">
+                        <span class="ti ti-briefcase mr-2"></span>
+                        <div>
+                          <h5>Solicitudes Postuladas</h5>
+                          <h4>{{estadoPrograma.postulado}}</h4>
+                        </div>
+                      </div>
+                      <div class="card-footer postulado">
+                        <a href="" class="ml-3">Mostrar Todo</a>
+                      </div>
+                    </div>
           </div>
 
           <div class="card border-secondary listaCard ml-4" >
@@ -125,7 +124,7 @@
               <h1 class="m-2">Lista de Solicitudes</h1>
             </div>
             <div class="card-body">
-              <table style="overflow: auto display: inline-block" class="table table-hover">
+              <table class="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">Programa:</th>
@@ -135,87 +134,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Luis Alfredo Rangel</td>
-                    <td>25/04/2021</td>
-                    <td>Pendiente</td>
-                  </tr>
-                  <tr class="table-success">
-                    <th scope="row">Construccion en sitio propio</th>
-                    <td>Juan Pablo Caro</td>
-                    <td>25/04/2021</td>
-                    <td>Aprobado</td>
-                  </tr>
-                  <tr class="table-danger">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Maria Jose Serrano</td>
-                    <td>25/04/2021</td>
-                    <td>Rechazado</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
-                  </tr>
-                  <tr class="table-warning">
-                    <th scope="row">Vivienda nueva</th>
-                    <td>Alejandra Mazuera</td>
-                    <td>25/04/2021</td>
-                    <td>En proceso</td>
+                  <tr *ngFor="let solicitud of solicitudes">
+                    <td>{{ solicitud.idPrograma }}</td>
+                    <td>{{ solicitud.idUsuario }}</td>
+                    <td>{{ solicitud.fechaCreacion }}</td>
+                    <td>{{ solicitud.idEstado }}</td>
+                    <td>
+                      <button type="button" [routerLink]="['/dashboard/Modificar', solicitud.idSubsidios]" routerLinkActive="active" class="btn btn-primary">editar</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger">eliminar</button>
+                    </td>
                   </tr>
                 </tbody>
             </table>
-
             </div>
           </div>
 
@@ -223,4 +155,5 @@
     </main>
   </div>
 
-</body>
+</body> 
+
