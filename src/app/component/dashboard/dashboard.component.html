@@ -18,12 +18,6 @@
           </a>
         </li>
         <li>
-          <a href="" [routerLink]="['/dashboard/ConsultarSolicitud']" routerLinkActive="router-link-active">
-            <span class="ti ti-briefcase"></span>
-            <span>Consultar Solicitud</span>
-          </a>
-        </li>
-        <li>
           <a href="">
             <span class="ti ti-close"></span>
             <span>Salir</span>
@@ -134,10 +128,10 @@
                     <td>{{ solicitud.fechaCreacion }}</td>
                     <td>{{ solicitud.idEstado }}</td>
                     <td>
-                      <button type="button" [routerLink]="['/dashboard/Modificar', solicitud.idSubsidios]" routerLinkActive="active" class="btn btn-primary">editar</button>
+                      <button type="button" [routerLink]="['/dashboard/Modificar', solicitud.idSubsidios]"  class="btn btn-primary">editar</button>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-danger">eliminar</button>
+                      <!-- <button type="button" class="btn btn-danger">eliminar</button> -->
                     </td>
                   </tr>
                 </tbody>
@@ -145,7 +139,7 @@
             </div>
           </div>
 
-
+          <!-- routerLinkActive="active" -->
     </main>
   </div>
 

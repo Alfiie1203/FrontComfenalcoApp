@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ModificarFormComponent implements OnInit {
 
-  public idSolicitud: number
+  public idSusuario: number
   public solicitud: Solicitudes
 
   constructor(public solicitudesService: SolicitudesService,
@@ -20,22 +20,23 @@ export class ModificarFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // let params=this.activatedRoute.params['_value'];
-    // this.idSolicitud = params.idSolicitud;
-    // console.log(this.idSolicitud);
-    // this.solicitudesService.findById(this.idSolicitud).subscribe(data=>{
-    //   this.solicitud = data;
-    //   console.table(this.solicitud);
-    // })
+    let params = parseInt(this.activatedRoute.snapshot.paramMap.get('Id'));
+    this.getById(params);
   }
 
   public update(): void {
   this.solicitudesService.editarSolicitud(this.solicitud).subscribe(solicitud => {
     this.router.navigate(['/dashboard'])
     Swal.fire('Solicitud actualizada',
-    `Solicitud con Id ${this.solicitud.idSubsidios} editada con éxito!`, 'success')
+    `Solicitud con Id ${this.solicitud.idSubsidio} editada con éxito!`, 'success')
   }
   );
 }
+
+  public getById(id: number): void{
+    this.solicitudesService.listarSolicitudesPorId(id).subscribe(solicitud => {
+      this.solicitud = solicitud;
+    })
+  }
 
 }

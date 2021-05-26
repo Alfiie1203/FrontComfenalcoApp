@@ -18,12 +18,6 @@
           </a>
         </li>
         <li>
-          <a href="" [routerLink]="['/dashboard/ConsultarSolicitud']" routerLinkActive="router-link-active">
-            <span class="ti ti-briefcase"></span>
-            <span>Consultar Solicitud</span>
-          </a>
-        </li>
-        <li>
           <a href="">
             <span class="ti ti-close"></span>
             <span>Salir</span>
@@ -46,21 +40,27 @@
         <fieldset>
           <legend class="mb-4">Formulario de modificacion de  solicitud</legend>
           <div class="form-group row ">
+            <label for="idSub" class="col-sm-2 col-form-label ">Id Subsidio</label>
+            <div class="col-sm-3 ">
+              <input [(ngModel)]="solicitud.idSubsidio"  type="text" class="form-control-plaintext" name="idSub" id="idSub" placeholder="Ingrese el id subsidio">
+            </div>
+          </div>
+          <div class="form-group row ">
             <label for="programa" class="col-sm-2 col-form-label ">Programa</label>
             <div class="col-sm-3 ">
-              <input [(ngModel)]="solicitud.idPrograma" #programa type="text" class="form-control-plaintext" name="programa" id="programa" placeholder="Ingrese el programa">
+              <input [(ngModel)]="solicitud.idPrograma"  type="text" class="form-control-plaintext" name="programa" id="programa" placeholder="Ingrese el programa">
             </div>
           </div>
           <div class="form-group row">
             <label for="usuario" class="col-sm-2 col-form-label">Usuario</label>
             <div class="col-sm-3">
-              <input [(ngModel)]="solicitud.idUsuario" type="text" class="form-control-plaintext" name="usuario" id="usuario" placeholder="Ingrese el nombre de usuario">
+              <input [(ngModel)]="solicitud.idUsr" type="text" class="form-control-plaintext" name="usuario" id="usuario" placeholder="Ingrese el nombre de usuario">
             </div>
           </div>
           <div class="form-group row">
             <label for="fecha" class="col-sm-2 col-form-label">Fecha</label>
             <div class="col-sm-3">
-              <input [(ngModel)]="solicitud.fechaCreacion" type="date" class="form-control-plaintext" name="fecha" id="fecha" id="staticDate">
+              <input [(ngModel)]="solicitud.fechaFinalizacion" type="date date:'yyyy-MM-dd'" class="form-control-plaintext" name="fecha" id="fecha" id="staticDate">
             </div>
           </div>
           <div class="form-group row">
@@ -69,8 +69,8 @@
               <input [(ngModel)]="solicitud.idEstado" type="text" class="form-control-plaintext" name="estado" id="estado" placeholder="Ingrese el estado">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btnAceptar">Submit</button>
-          <button [routerLink]="['/dashboard']" routerLinkActive="router-link-active" type="submit"class="btn">Cancelar</button>
+          <button type="submit" (click)='update()' class="btn btn-primary btnAceptar">Submit</button>
+
         </fieldset>
       </form>
 
@@ -78,3 +78,4 @@
   </div>
 
 </body>
+
