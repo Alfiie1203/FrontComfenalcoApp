@@ -17,6 +17,10 @@ export class ProgramasService {
     return this.http.get(this.url+'programas');
   }
 
+  public listarById(idPrograma:string):Observable<any>{
+    return this.http.get(this.url+'programasPorId?idPrograma='+idPrograma);
+  }
+
   public aplicar(aplicacion:Aplicacion):Observable<any>{
     return this.http.post(this.url+'registrarSubsidio',aplicacion);
   }

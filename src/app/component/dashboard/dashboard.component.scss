@@ -95,34 +95,21 @@ th, td {
     transition: margin-left 500ms;
 }
 
-header {
-    position: fixed;
-    left: 290px;
-    top: 0;
-    z-index: 100;
-    width: calc(100% - 290px);
-    background: #fff;
-    height: 60px;
-    padding: 0rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    transition: left 500ms;
-}
-
-.search-wrapper{
-  display: flex;
-  align-items: center;
-}
-
-.search-wrapper input{
-  border: 0;
-  outline: 0;
-  padding: 1rem;
-  height: 38px;
-  font-size: 1.2rem;
-}
+// header {
+//     position: fixed;
+//     left: 290px;
+//     top: 0;
+//     z-index: 100;
+//     width: calc(100% - 290px);
+//     background: #fff;
+//     height: 60px;
+//     padding: 0rem 1rem;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     border-bottom: 1px solid #ccc;
+//     transition: left 500ms;
+// }
 
 .social-icons{
   display: flex;
@@ -141,7 +128,7 @@ header {
   width: 40px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(walter.jpg);
+  background-image: url(/assets/images/walter.jpg);
   border-radius: 50%;
 }
 
@@ -185,6 +172,11 @@ main {
 .enProceso{
   background: palegoldenrod;
 }
+
+.postulado{
+  background: lightskyblue;
+}
+
 .card-body{
   padding: 1rem;
   display: flex;
@@ -211,3 +203,10 @@ main {
   width: 1200px;
   margin-bottom: 40px;
 }
+
+.btn{
+  height: 30px;
+  width: 80px;
+  margin-left: -40px;
+}
+

@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   public findAll():void{
     this.programasService.listar().subscribe(data=>{
       this.programas=data;
-      console.log(this.programas)
+      console.log('123456'+this.programas)
     });
     
   }

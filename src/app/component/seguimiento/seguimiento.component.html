@@ -1,23 +1,17 @@
 <app-header></app-header>
 <br><br>
-<div class="jumbotron">
-    <h1 class="display-3">Aplicacioeeeeen</h1>
-    <p class="lead">Aqui usted podrá ver los detalles de su aplicaión y los mensajes por parte de los asesores según lo requiera el caso</p>
+<div class="jumbotron" *ngFor="let subsidio of subsidio">
+    <h1 class="display-3">{{subsidio.programa}}</h1>
+    <div class="card border-success mb-3" style="max-width: 200rem;">
+        <div class="card-body">
+          <h3 class="card-title">Estado de la aplicacion: {{subsidio.estado}}</h3>
+          <p class="card-text">{{subsidio.infoEstado}}</p>
+        </div>
+    </div>
     <hr class="my-4">
-    <div class="alert alert-dismissible alert-danger">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <h4 class="alert-heading">Error en documento!</h4>
-        <p class="mb-0">Olvido cargar el documento "Formulario de aplicación" carguelo en el siguiente <a href="">link</a></p>
-    </div>
-    <div class="alert alert-dismissible alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <h4 class="alert-heading">Documentos correctos!</h4>
-        <p class="mb-0">Todos lo archivos requeridos se encuentran listos</p>
-    </div>
+    <h3>Historial de notificaciones:</h3>
     <div class="alert alert-dismissible alert-primary">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <h4 class="alert-heading">Estado de revision!</h4>
-        <p class="mb-0">Se pasaran los archivos a un estado de revision y se notificará cuando se tenga respuesta</p>
+        <h4 class="alert-heading">Postulacin Exitosa !</h4>
     </div>
     <p class="lead">
     </p>

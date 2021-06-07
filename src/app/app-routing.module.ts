@@ -14,6 +14,7 @@ import { RevisionDocumentosComponent } from './component/revision-documentos/rev
 import { ListarCiudadesComponent } from './component/listar-ciudades/listar-ciudades.component';
 import { FormularioAplicacionComponent } from './component/formulario-aplicacion/formulario-aplicacion.component';
 import { SeguimientoComponent } from './component/seguimiento/seguimiento.component';
+import { ModificarFormComponent } from './component/modificar-form/modificar-form.component';
 
 const redirectUnauthorizedToLogin=()=>redirectUnauthorizedTo(['/ingresar']);
 
@@ -22,6 +23,7 @@ const routes: Routes = [
 
   {path:'ingresar/admin',component:IngresarAdminComponent},
   {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard/Modificar/:Id',component:ModificarFormComponent},
   {path:'ver-aplicaciones',component:RevisionDocumentosComponent},
 
   {path:'listarCiudades', component:ListarCiudadesComponent},
@@ -35,7 +37,7 @@ const routes: Routes = [
   {path:'contacto',component:ContactoComponent},
   {path:'registrar',component:RegistrarComponent},
   {path:'resetear',component:ResetcontraComponent},
-  {path:'programas/:PROGRAMA',component:ProgramasComponent},
+  {path:'programas/:id',component:ProgramasComponent},
   {path:'home',component:HomeComponent,
     canActivate:[AngularFireAuthGuard],
     data:{authGuardPipe:redirectUnauthorizedToLogin}

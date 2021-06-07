@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { Aplicacion } from 'src/app/domain/aplicacion';
+import { Programas } from 'src/app/domain/programas';
 import { Users } from 'src/app/domain/users';
 import { Usuarios } from 'src/app/domain/usuarios';
 import { ProgramasService } from 'src/app/service/programas.service';
@@ -20,6 +21,8 @@ export class ProgramasComponent implements OnInit {
   public aplicacion: Aplicacion;
   public usuarios: Usuarios;
   public users: Users;
+  public id: string;
+  public programas:Programas;
   
   uploadPercent: Observable<number>;
   urlImage: Observable<string>;
@@ -32,9 +35,12 @@ export class ProgramasComponent implements OnInit {
               public activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    let params=this.activatedRoute.params['_value'];
+    this.id=params.id;
     this.aplicacion=new Aplicacion ("","","","");
     this.usuarios= new Usuarios("","","","","","","","","","","","");
     this.datosUsers();
+    this.programa();
     
   }
 
@@ -48,6 +54,13 @@ export class ProgramasComponent implements OnInit {
     this.uploadPercent = task.percentageChanges();
     task.snapshotChanges().pipe( finalize(()=> this.urlImage = ref.getDownloadURL())).subscribe();
     
+  }
+
+  programa():void{
+    this.aplicacionService.listarById(this.id).subscribe(data=>{
+      this.programas=data;
+      console.log('123456'+this.programas)
+    });
   }
 
   aplicar():void{
@@ -64,7 +77,6 @@ export class ProgramasComponent implements OnInit {
       
     });
 
-
   }
 
   public datosUsers():void{
@@ -79,11 +91,9 @@ export class ProgramasComponent implements OnInit {
 
   guardar():void{
     this.aplicacion.idUsr = this.usuarios.idUsuario;
-    this.aplicacion.idPrograma = "1";
+    this.aplicacion.idPrograma = this.id;
     this.aplicacion.fechaFinalizacion = "2021-06-04";
     this.aplicacion.formulario = this.inputFormulario.nativeElement.value;
-
-
     Swal.fire({
       title: '¿Esta seguro que quiere aplicar?',
       showDenyButton: true,
