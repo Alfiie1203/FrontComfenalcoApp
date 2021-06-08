@@ -1,9 +1,9 @@
 export class Solicitudes {
 
   constructor(
-    public idSubsidio: number,
+    public idSubsidios: number,
     public idEstado: number,
-    public idUsr: number,
+    public idUsuario: number,
     public idPrograma: number,
     public fechaFinalizacion: string
   ){}

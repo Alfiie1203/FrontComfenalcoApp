@@ -37,7 +37,7 @@ export class SolicitudesService {
   }
 
   public editarSolicitud(solicitud: Solicitudes):Observable<any>{
-    return this.httpClient.put<Solicitudes>(`${this.url}actualizarSubsidio`, solicitud).pipe(
+    return this.httpClient.put<Solicitudes>(`${this.url}actualizarSubsidioDos`, solicitud).pipe(
       catchError(e => {
         Swal.fire('Error al actualizar', e.error.mensaje, 'error');
         return throwError(e);
